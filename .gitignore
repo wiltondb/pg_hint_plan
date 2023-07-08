@@ -17,3 +17,5 @@ regression.*
 # Documentation artifacts
 docs/_build
 docs/locale/**/*.mo
+
+/build
