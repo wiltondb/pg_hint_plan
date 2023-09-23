@@ -62,8 +62,11 @@ install ( FILES
     ${PROJECT_NAME}--1.3.4--1.3.5.sql
     ${PROJECT_NAME}--1.3.6--1.3.7.sql
     ${PROJECT_NAME}--1.3.7--1.3.8.sql
-    ${PROJECT_NAME}--1.3.8--1.4.sql
+    ${PROJECT_NAME}--1.3.8--1.3.9.sql
+    ${PROJECT_NAME}--1.3.9--1.4.sql
     ${PROJECT_NAME}--1.4--1.4.1.sql
-    ${PROJECT_NAME}--1.4.1--1.5.sql
+    ${PROJECT_NAME}--1.4.1--1.4.2.sql
+    ${PROJECT_NAME}--1.4.2--1.5.sql
+    ${PROJECT_NAME}--1.5--1.5.1.sql
     ${PROJECT_NAME}.control
     DESTINATION $ENV{PGWIN_INSTALL_DIR}/share/extension )
