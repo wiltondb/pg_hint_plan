@@ -37,7 +37,6 @@ EXTRA_CLEAN = RPMS
 # loading this module.
 # $ make check EXTRA_INSTALL=<this directory> EXTRA_REGRESS_OPTS="--temp-config <this directory>/pg_hint_plan.conf"
 ifeq ($(wildcard $(DESTDIR)/../src/Makefile.global),)
-PG_CONFIG = pg_config
 PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 else
@@ -56,8 +55,6 @@ TARSOURCES = Makefile *.c  *.h COPYRIGHT* \
 	docs/* expected/*.out sql/*.sql sql/maskout*.sh \
 	data/data.csv SPECS/*.spec
 
-rpms: rpm15
-
 # pg_hint_plan.c includes core.c and make_join_rel.c
 pg_hint_plan.o: core.c make_join_rel.c # pg_stat_statements.c
 
@@ -70,6 +67,3 @@ $(STARBALLS): $(TARSOURCES)
 	ln -s . $(subst .tar.gz,,$@)
 	tar -chzf $@ $(addprefix $(subst .tar.gz,,$@)/, $^)
 	rm $(subst .tar.gz,,$@)
-
-rpm15: $(STARBALL15)
-	MAKE_ROOT=`pwd` rpmbuild -bb SPECS/pg_hint_plan15.spec
